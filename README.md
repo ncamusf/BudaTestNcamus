@@ -148,14 +148,14 @@ Content-Type: application/json
 
 #### **Supported Cryptocurrencies:**
 
-| Symbol | Name | Description |
-|--------|------|-------------|
-| `BTC` | Bitcoin | The original cryptocurrency |
-| `ETH` | Ethereum | Smart contract platform |
-| `BCH` | Bitcoin Cash | Bitcoin fork focused on payments |
-| `LTC` | Litecoin | Peer-to-peer cryptocurrency |
-| `USDC` | USD Coin | USD-backed stablecoin |
-| `USDT` | Tether | USD-pegged stablecoin |
+| Symbol | Name |
+|--------|------|
+| `BTC` | Bitcoin |
+| `ETH` | Ethereum |
+| `BCH` | Bitcoin Cash |
+| `LTC` | Litecoin |
+| `USDC` | USD Coin |
+| `USDT` | Tether |
 
 #### **Supported Fiat Currencies:**
 
@@ -302,7 +302,7 @@ Response:
 #### **cURL Example:**
 
 ```bash
-curl -X POST https://your-region-your-project.cloudfunctions.net/getPortfolioValue \
+curl -X POST https://us-central1-hemolyzer-ai-ca5bb.cloudfunctions.net/getPortfolioValue \
   -H "Content-Type: application/json" \
   -d '{
     "portfolio": {
@@ -317,7 +317,7 @@ curl -X POST https://your-region-your-project.cloudfunctions.net/getPortfolioVal
 #### **JavaScript/TypeScript Example:**
 
 ```typescript
-const response = await fetch('https://your-region-your-project.cloudfunctions.net/getPortfolioValue', {
+const response = await fetch('https://us-central1-hemolyzer-ai-ca5bb.cloudfunctions.net/getPortfolioValue', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -342,7 +342,7 @@ console.log('Portfolio Value:', data.portfolioValue);
 import requests
 import json
 
-url = 'https://your-region-your-project.cloudfunctions.net/getPortfolioValue'
+url = 'https://us-central1-hemolyzer-ai-ca5bb.cloudfunctions.net/getPortfolioValue'
 payload = {
     "portfolio": {
         "BTC": 0.5,
@@ -453,16 +453,6 @@ The project follows a clean, modular architecture with separation of concerns:
 | **ts-jest** | TypeScript support for Jest |
 | **Node.js >= 18.0.0** | JavaScript runtime |
 | **Buda.com API** | Cryptocurrency market data |
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ### Development Guidelines:
 
