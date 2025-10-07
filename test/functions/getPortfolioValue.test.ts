@@ -80,7 +80,6 @@ const mockTickersData: TickersResponse = {
 describe('Portfolio Value Calculation', () => {
   
   beforeEach(() => {
-    // Clear all mocks before each test
     jest.clearAllMocks();
     (getTickers as jest.Mock).mockResolvedValue(mockTickersData);
     (validateRequest as jest.Mock).mockImplementation(() => {});
@@ -259,7 +258,7 @@ describe('Portfolio Value Calculation', () => {
             market_id: 'BTC-CLP',
             price_variation_24h: '2.5',
             price_variation_7d: '5.0',
-            last_price: [] as any // Empty price array
+            last_price: [] as any 
           }
         ]
       };
