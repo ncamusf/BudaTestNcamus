@@ -21,25 +21,14 @@ export interface PortfolioRequest {
   fiat_currency: LocalCurrency;
 }
 
-export interface Market {
-  base_currency: string;
-  quote_currency: string;
-  id: string;
-  name: string;
-  minimum_order_amount: [string, string];
-  disabled: boolean;
-  illiquid: boolean;
-  rpo_disabled: boolean | null;
-  taker_fee: number;
-  maker_fee: number;
-  max_orders_per_minute: number;
-  maker_discount_percentage: string;
-  taker_discount_percentage: string;
-  taker_discount_tiers: Record<string, string>;
-  maker_discount_tiers: Record<string, string>;
+export interface Ticker {
+  market_id: string;
+  price_variation_24h: string;
+  price_variation_7d: string;
+  last_price: [string, string];
 }
 
-export interface MarketsResponse {
-  markets: Market[];
+export interface TickersResponse {
+  tickers: Ticker[];
 }
 

@@ -3,15 +3,15 @@
  * Service for interacting with Buda.com cryptocurrency exchange API
  */
 
-import { MarketsResponse } from '../types';
+import { TickersResponse } from '../types';
 
 /**
- * Fetches all available markets from Buda.com API
- * @returns Promise with the markets data
+ * Fetches all available tickers from Buda.com API
+ * @returns Promise with the tickers data
  * @throws Error if the API request fails
  */
-export async function getMarkets(): Promise<MarketsResponse> {
-  const url = 'https://www.buda.com/api/v2/markets';
+export async function getTickers(): Promise<TickersResponse> {
+  const url = 'https://www.buda.com/api/v2/tickers';
   
   try {
     const response = await fetch(url);
@@ -20,10 +20,10 @@ export async function getMarkets(): Promise<MarketsResponse> {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     
-    const data = await response.json() as MarketsResponse;
+    const data = await response.json() as TickersResponse;
     return data;
   } catch (error) {
-    console.error('Error fetching markets from Buda API:', error);
+    console.error('Error fetching tickers from Buda API:', error);
     throw error;
   }
 }

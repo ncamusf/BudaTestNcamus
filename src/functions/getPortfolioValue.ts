@@ -1,7 +1,7 @@
 import { onRequest } from 'firebase-functions/v2/https';
-import { getMarkets } from '../services/buda.service';
+import { getTickers } from '../services/buda.service';
 import { validateRequest } from '../utils/validation';
-import { PortfolioRequest, MarketsResponse } from '../types';
+import { PortfolioRequest, TickersResponse } from '../types';
 
 /**
  * Firebase Cloud Function to get portfolio value
@@ -17,8 +17,8 @@ export const getPortfolioValue = onRequest(
       const requestBody = req.body as PortfolioRequest;
       validateRequest(requestBody);
       
-      // Get markets from Buda
-      const data = await getMarkets() as MarketsResponse;
+      // Get tickers from Buda
+      const data = await getTickers() as TickersResponse;
       
       res.status(200).json(data);
     } catch (error) {
